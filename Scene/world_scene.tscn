@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://df08vf251j2cg"]
+
+[ext_resource type="Script" path="res://Scripts/WaterDroplets.gd" id="1_wjc65"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_43oeq"]
+distance = 17.0
+
+[node name="WorldScene" type="Node2D"]
+script = ExtResource("1_wjc65")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 336)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_43oeq")
+
+[node name="Camera2D" type="Camera2D" parent="."]
